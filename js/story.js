@@ -388,9 +388,9 @@ const StoryData = {
     choices: [
       {
         text: '"你想走就走。但我不会停。"——坚持自己的路',
-        next: 'ch3_s1_signup',
+        next: 'ch2_router_disband',
         effects: { '心态': 10, '团队': -8, '人气': 3 },
-        flavor: '你的话很冷。但阿杰听完后，沉默了很久。他没有走。',
+        flavor: '你的话很冷。阿杰看着你，沉默了很久。',
       },
       {
         text: '"打完这个赛季再说。就三个月。"——说服他留下',
@@ -400,12 +400,25 @@ const StoryData = {
       },
       {
         text: '"行。我理解。"——接受现实，重新找人',
-        next: 'ch3_s1_signup',
+        next: 'ch2_router_disband',
         effects: { '心态': -5, '人气': 5, '团队': -3 },
-        flavor: '你拍了拍他的肩膀。有些不舍，但你尊重他的选择。战队需要重新洗牌。',
+        flavor: '你拍了拍他的肩膀。有些不舍，但你尊重他的选择。',
       },
     ],
     on_enter: { '心态': -5 },
+  },
+
+  // Router: check if team survives
+  'ch2_router_disband': {
+    id: 'ch2_router_disband',
+    chapter: 2,
+    title: '',
+    type: 'choice',
+    text: '',
+    choices: [
+      { text: '.', next: 'ch3_s1_signup', effects: {}, condition: { 'teamwork': 30 } },
+      { text: '.', next: 'end_disband', effects: {} },
+    ],
   },
 
   // ==========================================
@@ -1080,6 +1093,14 @@ const StoryData = {
     id: 'end_legend', chapter: 6, title: '终章', type: 'ending', endingId: 10,
     endingIcon: '🔮', endingTitle: '传奇不灭', endingRarity: '隐藏',
     endingText: '屏幕暗了下来。\n\n一行字缓缓浮现——\n\n"在你的每一个选择里，都有一个不同的故事。"\n\n"有些故事里你是冠军，有些故事里你选择了另一条路。"\n\n"但不论结局如何——你曾经追过梦。"\n\n"你曾经说过那句——\'我要打上海TI。\'"\n\n"而这句话本身——就是一个传奇。"\n\n谢谢你，玩家。\n\n天梯还在继续。海选还在继续。梦想也在继续。\n\n——THE END——',
+    text: '', choices: [],
+  },
+
+  // --- Early fail: Team disbands ---
+  'end_disband': {
+    id: 'end_disband', chapter: 2, title: '终章', type: 'ending', endingId: 0,
+    endingIcon: '💨', endingTitle: '队伍解散', endingRarity: '中途',
+    endingText: '阿杰走了。\n\n然后是另一个队友。然后又一个。\n\n一周之内，训练室里只剩下你一个人。\n\n你坐在空荡荡的房间里，看着墙上那张TI海报。\n\n"我要打上海TI。"\n\n这句话现在听起来，像一个笑话。\n\n你关上灯，锁好门。\n\n有些梦想，不是不够努力——是没有遇到对的人。\n\n也许下一次。也许换个队伍。也许......\n\n但你心里知道，这次，这条路到此为止了。',
     text: '', choices: [],
   },
 };

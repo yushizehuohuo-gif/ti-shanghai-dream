@@ -325,6 +325,7 @@ const UI = {
       { id: 8, icon: '🔄', title: '明年再来', rarity: '常见', desc: '失败不是终点，你已经在备战下一届TI。' },
       { id: 9, icon: '💔', title: '遗憾退场', rarity: '常见', desc: '梦想暂时搁浅，但生活还在继续。' },
       { id: 10, icon: '🔮', title: '传奇不灭', rarity: '隐藏', desc: '？？？' },
+      { id: 0, icon: '💨', title: '队伍解散', rarity: '中途', desc: '没能走到最后。有些梦，需要对的人一起追。' },
     ];
 
     container.innerHTML = `
