@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我要打上海TI</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="game-container">
+    <header id="chapter-header">
+      <div id="chapter-num"></div>
+      <h1 id="chapter-title"></h1>
+    </header>
+
+    <main id="scene-area">
+      <div id="scene-title"></div>
+      <div id="scene-text"></div>
+      <div id="minigame-area" class="hidden"></div>
+      <div id="scene-flavor" class="hidden"></div>
+    </main>
+
+    <div id="stats-panel">
+      <div class="stat" id="stat-skill">
+        <span class="stat-icon">🎯</span>
+        <span class="stat-label">实力</span>
+        <span class="stat-value" id="val-skill">50</span>
+      </div>
+      <div class="stat" id="stat-mentality">
+        <span class="stat-icon">💪</span>
+        <span class="stat-label">心态</span>
+        <span class="stat-value" id="val-mentality">50</span>
+      </div>
+      <div class="stat" id="stat-popularity">
+        <span class="stat-icon">📣</span>
+        <span class="stat-label">人气</span>
+        <span class="stat-value" id="val-popularity">50</span>
+      </div>
+      <div class="stat" id="stat-teamwork">
+        <span class="stat-icon">🤝</span>
+        <span class="stat-label">团队</span>
+        <span class="stat-value" id="val-teamwork">50</span>
+      </div>
+    </div>
+
+    <div id="choices-container"></div>
+
+    <div id="menu-bar">
+      <button id="btn-save" title="存档">💾</button>
+      <button id="btn-load" title="读档">📂</button>
+      <button id="btn-restart" title="重新开始">🔄</button>
+      <button id="btn-gallery" title="结局画廊">🏆</button>
+    </div>
+  </div>
+
+  <script src="js/stats.js"></script>
+  <script src="js/minigames.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/save.js"></script>
+  <script src="js/story.js"></script>
+  <script src="js/engine.js"></script>
+</body>
+</html>
