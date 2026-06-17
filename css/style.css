@@ -262,7 +262,7 @@ body::before {
   border-color: var(--gold);
   background: #1e1e30;
   color: var(--text-bright);
-  transform: translateX(4px);
+  padding-left: 22px;
 }
 
 .choice-btn:hover::before {

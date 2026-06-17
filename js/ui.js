@@ -95,6 +95,9 @@ const UI = {
         cursor.className = 'cursor';
         el.appendChild(cursor);
         this._typewriterTimer = null;
+        // Auto-scroll to see latest text
+        const area = document.getElementById('scene-area');
+        area.scrollTo({ top: area.scrollHeight, behavior: 'smooth' });
         if (callback) callback();
       }
     };
@@ -131,6 +134,9 @@ const UI = {
     el.classList.remove('hidden');
     requestAnimationFrame(() => {
       el.classList.add('visible');
+      // Auto-scroll scene area to show flavor
+      const area = document.getElementById('scene-area');
+      area.scrollTo({ top: area.scrollHeight, behavior: 'smooth' });
     });
   },
 
